@@ -6,9 +6,9 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "uploaded_images"
 
-for f in os.listdir("D:\\ayushi\\uploaded_images"):
+for f in os.listdir("uploaded_images"):
     try:
-        os.remove("D:\\ayushi\\uploaded_images" + f)
+        os.remove("uploaded_images" + f)
     except OSError:
         pass
 
@@ -36,5 +36,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    app.run('0.0.0.0', port=5001)
+    app.run()
